@@ -1,0 +1,6 @@
+* Unique: 
+[Index(IsUnique = true)]
+public string Username { get; set; }
+
+* Maxlenght, required, emailaddress, password, compare,.....
+
