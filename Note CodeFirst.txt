@@ -4,3 +4,12 @@ public string Username { get; set; }
 
 * Maxlenght, required, emailaddress, password, compare,.....
 
+* Gender: 
+public enum Gender : byte
+    {
+        Male = 1,
+        Female = 2,
+        Unknown = 3
+    }
+=> public Gender Gender { get; set; } 
+
