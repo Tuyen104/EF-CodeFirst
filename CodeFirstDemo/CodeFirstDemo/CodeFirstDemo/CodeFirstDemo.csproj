@@ -201,6 +201,7 @@
     <Compile Include="Models\DAL\SchoolContext.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

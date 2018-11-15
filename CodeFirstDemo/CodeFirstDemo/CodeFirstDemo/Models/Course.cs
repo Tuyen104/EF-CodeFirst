@@ -12,7 +12,7 @@ namespace CodeFirstDemo.Models
         [Required]
         public string CourseName { get; set; }
         public string Description { get; set; }
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 
     }
 }

@@ -6,10 +6,7 @@ using System.Web;
 
 namespace CodeFirstDemo.Models
 {
-    public enum Gender
-    {
-        Male, Female, Others
-    }
+    
     public class Student
     {
         public int Id { get; set; }
@@ -28,6 +25,6 @@ namespace CodeFirstDemo.Models
         public string Phone { get; set; }
         [Required]
         public District District { get; set; }
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }
