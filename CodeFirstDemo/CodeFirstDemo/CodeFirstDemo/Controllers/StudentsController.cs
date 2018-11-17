@@ -48,7 +48,7 @@ namespace CodeFirstDemo.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FullName,DistrictId,Birthday,Gender,Email,Phone")] Student student)
         {
             if (ModelState.IsValid)
@@ -57,8 +57,8 @@ namespace CodeFirstDemo.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.DistrictId = new SelectList(db.Districts, "Id", "DistrictName", student.DistrictId);
+           
+            ViewBag.DistrictId = new SelectList(db.Districts, "Id", "", student.DistrictId);
             return View(student);
         }
 

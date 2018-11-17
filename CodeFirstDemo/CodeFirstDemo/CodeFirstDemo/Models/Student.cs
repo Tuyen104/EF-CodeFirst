@@ -12,6 +12,7 @@ namespace CodeFirstDemo.Models
         public int Id { get; set; }
         [Required]
         public string FullName { get; set; }
+        [Required]
         public int DistrictId { get; set; }
         [DataType(DataType.Date)]
         public DateTime? Birthday { get; set; }
@@ -23,7 +24,8 @@ namespace CodeFirstDemo.Models
         [Required]
         [MinLength(9), MaxLength(20)]
         public string Phone { get; set; }
-        [Required]
+
+        //[Required]: Khóa ngoai khong can vi ID da require
         public District District { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
