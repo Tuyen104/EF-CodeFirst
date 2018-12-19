@@ -1,0 +1,35 @@
+STORED PROCEDURE
+ I. Generating stored procedures
+
+- add new code in context file: modelBuilder.Entity<Student>().MapToStoredProcedures();
+  * Use Stored Procedures for All Entities
+=> modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
+
+- add-migration
+- in Up() method, add new SP
+ ex:  
+    public override void Up()
+        {
+            CreateStoredProcedure(
+       "dbo.Student_TopStudent",
+       p => new
+       {
+
+       },
+       body:
+           @"select top(5) Score from dbo.Students Order by Score desc"
+   );
+        }
+
+- update-database
+
+II. Query SP:
+ a) Selecting entities:
+
+  var students = db.Students.SqlQuery("Student_OrderByScore");
+            return View(students.ToList());
+
+ b) Selecting non-entity types (TopStudent is a ViewModel)
+
+ var students = db.Database.SqlQuery<TopStudent>("Student_TopStudent");
+            return View(students.ToList());
